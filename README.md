@@ -1,24 +1,47 @@
 # Product Management Mini App
 
-A simple fullstack product management app for TPT Digital Full Stack Developer Intern technical test.
+Aplikasi fullstack sederhana untuk manajemen produk yang dibuat sebagai technical test Full Stack Developer Intern di TPT Digital.
 
 ---
 
-## 🚀 Features
+# 🚀 Fitur
 
-- Product list (table)
-- Add, edit, delete product
-- Product active/inactive status
-- Loading & error states
-- Responsive, clean UI (Tailwind CSS v4)
-- REST API (Express + MongoDB Atlas)
-- Unit tests (Jest + Supertest)
+- Menampilkan daftar produk
+- Menambah produk
+- Mengedit produk
+- Menghapus produk
+- Status produk aktif / nonaktif
+- Tampilan modern dan responsif
+- REST API menggunakan Express.js
+- Integrasi MongoDB Atlas
+- Unit testing menggunakan Jest & Supertest
+- Loading dan error handling
 
 ---
 
-## 🛠️ Setup Instructions
+# 🛠️ Tech Stack
 
-### 1. Clone Repository
+## Frontend
+
+- React
+- Vite
+- Tailwind CSS v4
+- Axios
+
+## Backend
+
+- Node.js
+- Express.js
+- MongoDB Atlas
+- Mongoose
+- Jest
+- Supertest
+
+---
+
+# 📦 Cara Menjalankan Project
+
+## 1. Clone Repository
 
 ```bash
 git clone https://github.com/raiakmal/fullstack-js-test
@@ -27,63 +50,97 @@ cd fullstack-js-test
 
 ---
 
-### 2. Backend Setup
+# ⚙️ Setup Backend
+
+## Install Dependency
 
 ```bash
 cd backend
 npm install
 ```
 
-#### Environment Variables
+---
 
-Buat file `.env` di folder backend:
+## Buat File `.env`
 
-```
-MONGODB_URI=<mongodb_connection_string>
+Buat file `.env` di dalam folder `backend`:
+
+```env
+MONGODB_URI=mongodb://username:password@host1:27017,host2:27017,host3:27017/productdb?replicaSet=atlas-xxxxx-shard-0&ssl=true&authSource=admin&retryWrites=true&w=majority
 PORT=5000
 ```
 
 Contoh:
 
-```
-MONGODB_URI=mongodb+srv://user:password@cluster0.mongodb.net/productdb?retryWrites=true&w=majority
+```env
+MONGODB_URI=mongodb://myuser:mypassword@ac-xxxxx-shard-00-00.mongodb.net:27017,ac-xxxxx-shard-00-01.mongodb.net:27017,ac-xxxxx-shard-00-02.mongodb.net:27017/productdb?ssl=true&replicaSet=atlas-xxxxx-shard-0&authSource=admin&retryWrites=true&w=majority
 PORT=5000
 ```
 
-#### Jalankan Backend
+> Gunakan format MongoDB connection string (`mongodb://`) dan bukan `mongodb+srv://`.
+
+---
+
+## Menjalankan Backend
 
 ```bash
 npm run dev
 ```
 
+Backend akan berjalan di:
+
+```txt
+http://localhost:5000
+```
+
 ---
 
-### 3. Frontend Setup
+# 🎨 Setup Frontend
+
+## Install Dependency
 
 ```bash
 cd frontend
 npm install
 ```
 
-#### Environment Variables
+---
 
-Buat file `.env` di folder frontend:
+## Buat File `.env`
 
-```
+Buat file `.env` di dalam folder `frontend`:
+
+```env
 VITE_API_URL=http://localhost:5000/api
 ```
 
-#### Jalankan Frontend
+---
+
+## Menjalankan Frontend
 
 ```bash
 npm run dev
 ```
 
+Frontend akan berjalan di:
+
+```txt
+http://localhost:5173
+```
+
 ---
 
-## 🧪 Testing
+# 🧪 Testing
 
-### Backend Unit Test
+## Backend Unit Test
+
+Buat file `.env.test` di dalam folder `backend`:
+
+```env
+MONGODB_URI=mongodb://username:password@host1:27017,host2:27017,host3:27017/product_test?replicaSet=atlas-xxxxx-shard-0&ssl=true&authSource=admin&retryWrites=true&w=majority
+```
+
+Kemudian jalankan:
 
 ```bash
 cd backend
@@ -92,33 +149,39 @@ npm test
 
 ---
 
-## 📸 Screenshots
+# 📸 Screenshot
 
-### Dashboard
+## Dashboard
 
 ![Dashboard](frontend/public/screenshots/dashboard.png)
 
-### Form Produk
+---
+
+## Form Produk
 
 ![Form Produk](frontend/public/screenshots/form.png)
 
-### 🎥 Demo Video
+---
+
+# 🎥 Demo Video
 
 [![Watch the demo](https://img.youtube.com/vi/ItAT3tod35g/0.jpg)](https://youtu.be/ItAT3tod35g)
 
 ---
 
-## ⚠️ Tradeoffs & Notes
+# ⚠️ Tradeoffs & Catatan
 
-- **Backend menggunakan Express (Node.js)**, bukan Python (Django/Flask) atau Go, sesuai dengan pengalaman utama saya. Jika diharuskan menggunakan stack lain, saya siap belajar dan menyesuaikan.
-- Validasi backend menggunakan mongoose schema, belum ada validasi lanjutan (misal: custom middleware).
-- Unit test hanya untuk endpoint utama (POST, GET, validasi). Belum semua endpoint diuji karena keterbatasan waktu.
-- Error handling di frontend sudah menggunakan toast dan inline error, namun belum ada notifikasi global.
-- Deployment belum dilakukan, aplikasi hanya diuji secara lokal.
+- Backend menggunakan Express.js (Node.js) sesuai pengalaman utama yang saya miliki.
+- Validasi backend masih menggunakan validasi bawaan Mongoose Schema.
+- Unit test saat ini hanya mencakup endpoint utama seperti GET, POST, dan validasi data.
+- Error handling frontend sudah mencakup loading state dan feedback error sederhana.
+- Aplikasi saat ini hanya diuji secara lokal dan belum dilakukan deployment.
 
 ---
 
-## 🙏 Author
+# 🙏 Author
 
-- Nama: Muhammad Rai Akmal
-- Untuk pertanyaan, silakan kontak via email/LinkedIn.
+- Muhammad Rai Akmal
+- Mahasiswa Informatika Universitas Siliwangi
+
+Untuk pertanyaan atau kerja sama, silakan hubungi melalui LinkedIn atau email.
