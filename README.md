@@ -104,7 +104,7 @@ npm test
 
 ### 🎥 Demo Video
 
-[Klik di sini untuk menonton demo](https://drive.google.com/file/d/1ACQ_w37qmOEduL9K1nq4dyR3AjFLT1Wa/view?usp=sharing)
+[![Watch the demo](https://img.youtube.com/vi/ItAT3tod35g/0.jpg)](https://youtu.be/ItAT3tod35g)
 
 ---
 
